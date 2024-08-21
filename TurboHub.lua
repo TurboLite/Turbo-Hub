@@ -2279,7 +2279,7 @@ ImageButton.BorderSizePixel = 0
 ImageButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
 ImageButton.Size = UDim2.new(0, 50, 0, 50)
 ImageButton.Draggable = true
-ImageButton.Image = "http://www.roblox.com/asset/?id=18830504058"
+ImageButton.Image = "http://www.roblox.com/asset/?id=85573548025990"
 ImageButton.MouseButton1Down:connect(function()
     game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.End,false,game)
 end)
@@ -2321,8 +2321,8 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
-    Title = "Turbo Hub",
-    SubTitle = "[Premium] discord.com/zKA8VNHzME",
+    Title = "Turbo Hub [Premium]",
+    SubTitle = "| discord.com/zKA8VNHzME",
     TabWidth = 100,
     Size = UDim2.fromOffset(400, 280),
     Acrylic = false, -- The blur may be detectable, setting this to false disables blur entirely
