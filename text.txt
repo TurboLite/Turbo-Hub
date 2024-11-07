@@ -1,0 +1,56 @@
+repeat wait()
+until getgenv().LoadUi and getgenv().IslandCaller and getgenv().SettingManager
+
+-- Kiểm tra lại các biến
+if not getgenv().LoadUi then print("Error: LoadUi chưa được khởi tạo") end
+if not getgenv().IslandCaller then print("Error: IslandCaller chưa được khởi tạo") end
+if not getgenv().SettingManager then print("Error: SettingManager chưa được khởi tạo") end
+
+local Title = "W-azure" .. (getgenv().Premium and " [Premium]" or "")
+local SubTitle = "True V2 discord.gg/w-azure"
+
+-- Kiểm tra loadstring
+local success, Fluent = pcall(function()
+    return loadstring(game:HttpGet("https://raw.githubusercontent.com/vinhuchi/rblx/main/FixedFluent.lua"))()
+end)
+
+if not success then
+    print("Error: Không tải được Fluent từ URL")
+else
+    local UiSetting = Fluent.Options
+    local IslandCaller = getgenv().IslandCaller
+    local SettingManager = getgenv().SettingManager
+
+    -- Tạo cửa sổ
+    local Window = getgenv().Window or Fluent:CreateWindow({
+        Title = Title,
+        SubTitle = SubTitle,
+        TabWidth = 160,
+        Size = UDim2.fromOffset(480, 360),
+        Acrylic = false,
+        Theme = "Dark",
+        MinimizeKey = Enum.KeyCode.LeftControl
+    })
+
+    -- Kiểm tra Window
+    if not Window then
+        print("Error: Window chưa được tạo")
+    end
+
+    local UiOrders = {"Main Farm", "Stack Auto farm", "Sub Farming", "Status", "Player-Status", "Fruit", "Local Player", "Travel", "Pvp-Visual", "Raid-Material", "RaceV4-Mirage", "Sea Events", "Shop", "Setting", "Webhook", "Game-Server", "One Click"}
+    local TabCollections = {}
+    ElementsCollection = {}
+    for _, Name in pairs(UiOrders) do
+        ElementsCollection[Name] = {}
+    end
+
+    -- Khởi tạo UI
+    local UiIntilize = {
+        ["Main Farm"] = {
+            {Mode = "Label", Title = "Only Turn On 1 Farm At The Same Time"},
+            {Mode = "Toggle", Title = "Auto Katakuri", Description = "Turn On Auto Kill Cake Prince And Auto Kill Dough King By Default", Args = {"Katakuri", "Enable"}},
+            -- thêm các mục UI khác
+        }
+        -- thêm các phần khác của UiIntilize
+    }
+end
